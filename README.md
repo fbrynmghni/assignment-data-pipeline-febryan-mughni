@@ -76,9 +76,8 @@ Kolom asli tetap disimpan agar nilai sebelum dan sesudah bisa dibandingkan. Data
 - **`price` adalah kolom target dan tetap di-scale di tugas ini** (`price_scaled`) sebagai bahan latihan transformasi. Kolom `price` asli tetap disimpan. Untuk modeling, target umumnya tidak di-scale (atau, kalau di-scale, prediksinya dikembalikan ke skala asli dengan `inverse_transform`).
 - **Scaling dilakukan setelah cleaning.** Tidak ada NaN pada kolom yang di-scale (pipeline akan berhenti dengan error bila masih ada), dan nilai pengisi median dihitung sebelum scaling.
 - **`clip=True`** menjaga data baru yang nilainya melewati rentang data latih tetap berada di 0-1, dan `handle_unknown="ignore"` pada one-hot mencegah error bila muncul kategori baru. Karena itu objek `build_preprocessor()` bisa dipakai ulang pada data baru.
-- **Tidak ada train/test split** karena tugas ini hanya sampai cleaning dan transformation, sehingga scaler di-fit pada seluruh data bersih. Bila dataset ini dipakai untuk modeling, lakukan split dulu dan `fit` scaler hanya pada data latih agar tidak terjadi data leakage.
-- **Catatan outlier:** Min-Max sensitif terhadap outlier. Contohnya `compression-ratio` bernilai maksimum 23 (mobil diesel), sehingga 180 dari 181 mobil bensin terkumpul di rentang 0-0,2. Nilai ini valid, jadi tidak dibuang. Untuk model yang sensitif outlier, `RobustScaler` bisa menjadi alternatif.
-
+- **Tidak ada train/test split** karena tugas ini hanya sampai cleaning dan transformation, sehingga scaler di-fit pada seluruh data bersih.
+- **Catatan outlier:** Min-Max sensitif terhadap outlier. Contohnya `compression-ratio` bernilai maksimum 23 (mobil diesel), sehingga 180 dari 181 mobil bensin terkumpul di rentang 0-0,2. Nilai ini valid, jadi tidak dibuang.
 **Statistik sebelum dan sesudah Min-Max Scaling**
 
 | Kolom | Min sebelum | Max sebelum | Min sesudah | Max sesudah |
