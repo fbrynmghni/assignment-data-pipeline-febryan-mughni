@@ -1,0 +1,17 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Notebook (tidak dikumpulkan)
+notebooks/
+*.ipynb
+
+# macOS
+.DS_Store
