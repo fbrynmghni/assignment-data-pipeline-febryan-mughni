@@ -15,7 +15,6 @@ data-pipeline-assignment/
 │   ├── raw/automobileEDA_dirty_training.csv        # data mentah (tidak pernah diubah)
 │   └── processed/automobileEDA_processed.csv       # hasil pipeline
 ├── src/pipeline.py
-├── notebooks/pipeline_walkthrough.ipynb            # walkthrough interaktif untuk belajar
 ├── documentation/data-flow-diagram.png
 ├── README.md
 └── requirements.txt
